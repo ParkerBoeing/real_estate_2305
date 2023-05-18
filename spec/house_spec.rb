@@ -76,10 +76,10 @@ RSpec.describe Room do
       expect(house.area).to eq(1900)
     end
 
-    xit "can return the details of the house as a hash" do
+    it "can return the details of the house as a hash" do
       house = House.new("$400000", "123 sugar lane")
       expected = {
-        price: 400000
+        price: 400000,
         address: "123 sugar lane"
       }
       expect(house.details).to eq(expected)

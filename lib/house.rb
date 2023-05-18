@@ -30,4 +30,11 @@ class House
     end
     total_area
   end
+
+  def details
+    {
+      price: @price,
+      address: @address
+    }
+  end
 end
