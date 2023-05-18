@@ -5,7 +5,7 @@ RSpec.describe Room do
   describe "Iteration 2" do
     it "exists" do
       house = House.new("$400000", "123 sugar lane")
-      expect(room).to be_a Room
+      expect(house).to be_a House
     end
 
     it "it has a price" do
@@ -17,7 +17,7 @@ RSpec.describe Room do
     it "it has an address" do
       house = House.new("$400000", "123 sugar lane")
 
-      expect(room.address).to eq("123 sugar lane")
+      expect(house.address).to eq("123 sugar lane")
     end
 
     it "has an empty rooms array" do
@@ -27,15 +27,12 @@ RSpec.describe Room do
     end
 
     it "can have rooms added into the array" do
-      room = Room.new(:bedroom, 10, '13')
-
-      expect(room.is_painted?).to eq(false)
-    end
-
-    it "the paint method will change is_painted to true" do
-      room = Room.new(:bedroom, 10, '13')
-      room.paint
-      expect(room.is_painted?).to eq(true)
+      house = House.new("$400000", "123 sugar lane")
+      room_1 = Room.new(:bedroom, 10, '13')
+      room_2 = Room.new(:bedroom, 11, '15')
+      house.add_room(room_1)
+      house.add_room(room_2)
+      expect(house.rooms).to eq([room_1, room_2])
     end
   end
 end
