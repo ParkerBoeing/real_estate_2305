@@ -43,10 +43,18 @@ class House
   end
 
   def rooms_sorted_by_area
-
+    rooms.sort_by {|room| room.area}
   end
 
   def rooms_by_category
+  bedroom_array = rooms_from_category(:bedroom)
+  living_room_array = rooms_from_category(:living_room)
+  basement_array = rooms_from_category(:basement)
 
+  {
+    bedroom: bedroom_array,
+    living_room: living_room_array,
+    basement: basement_array
+  }
   end
 end
